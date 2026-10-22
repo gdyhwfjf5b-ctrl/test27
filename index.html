@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#f4f4f7">
+  <title>이건의 iPhone</title>
+  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="kakao.css?v=21">
+  <link rel="stylesheet" href="naver.css?v=21">
+  <link rel="stylesheet" href="keyboard.css?v=21">
+</head>
+<body>
+  <main class="device" id="device">
+    <div class="status" id="status">
+      <div class="status-left"><span id="statusTime">9:41</span><span id="carrier">LG U+ <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 17h12l-2-3V10a4 4 0 0 0-8 0v4zM10 20a2 2 0 0 0 4 0M4 4l16 16"/></svg></span></div>
+      <div class="island"><span></span><i></i></div>
+      <div class="status-right">
+        <span class="cell-bars" aria-label="셀룰러 신호"><i></i><i></i><i></i><i></i></span>
+        <span class="net">5G</span>
+        <span class="battery"><i id="batteryFill"></i><b>32</b></span>
+      </div>
+    </div>
+
+    <section class="screen lock-screen active" id="lockScreen">
+      <div class="lock-wallpaper"></div>
+      <div class="lock-date" id="lockDate"></div>
+      <div class="lock-time" id="lockTime"></div>
+      <div class="lock-widgets">
+        <div class="ring" style="--p:72"><i></i><b>13</b></div>
+        <div class="ring" style="--p:45"><i></i><b>3,006</b></div>
+        <div class="ring" style="--p:100"><i></i><b>18°</b></div>
+        <div class="ring" style="--p:89"><i></i><b>89%</b></div>
+      </div>
+      <div class="lock-notice" id="lockNotice">☾ 방해 금지 모드</div>
+      <div class="lock-shortcuts">
+        <button data-action="flashlight" aria-label="손전등"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 2h8v4l-2 3v13h-4V9L8 6z" fill="#fff"/></svg></button>
+        <button data-action="camera" aria-label="카메라"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 5h8l1.5 2H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2.5z" fill="#fff"/><circle cx="12" cy="13" r="3.6" fill="#3a4a66"/></svg></button>
+      </div>
+      <div class="home-bar" data-action="unlock"></div>
+    </section>
+
+    <section class="screen passcode-screen" id="passcodeScreen">
+      <div class="passcode-top">
+        <div class="face-id"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2" fill="#fff"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <h2>Face ID 또는 암호를 입력하세요</h2>
+        <p>iPhone을 잠금 해제하려면 암호를 입력하십시오.</p>
+        <div class="dots" id="passcodeDots"><i></i><i></i><i></i><i></i></div>
+        <div class="passcode-error" id="passcodeError"></div>
+      </div>
+      <div class="keypad" id="passcodeKeypad"></div>
+      <div class="passcode-bottom"><button id="cancelPasscode">취소</button><button id="forgotPasscode">긴급상황</button></div>
+    </section>
+
+    <section class="screen home-screen" id="homeScreen">
+      <div class="home-wallpaper"></div>
+      <div class="apps-grid">
+        <button class="app" data-app="calendar"><span class="icon calendar"></span><label>캘린더</label></button>
+        <button class="app" data-app="photos"><span class="icon photos"></span><label>사진</label></button>
+        <button class="app" data-app="camera"><span class="icon camera"></span><label>카메라</label></button>
+        <button class="app" data-app="clock"><span class="icon clock"></span><label>시계</label></button>
+        <button class="app" data-app="notes"><span class="icon notes"></span><label>메모</label></button>
+        <button class="app" data-app="weather"><span class="icon weather"></span><label>날씨</label></button>
+        <button class="app" data-app="settings"><span class="icon settings"></span><label>설정</label></button>
+        <button class="app" data-app="tft"><span class="icon tft"></span><label>TFT</label></button>
+        <button class="app" data-app="safari"><span class="icon safari"></span><label>Safari</label></button>
+        <button class="app" data-app="map"><span class="icon map"></span><label>네이버 지도</label></button>
+        <button class="app" data-app="naver"><span class="icon naver"></span><label>네이버</label></button>
+        <button class="app" data-app="kakao"><span class="icon kakao"></span><label>카카오톡</label></button>
+        <button class="app" data-app="fire24"><span class="icon fire24"></span><label>소방안전24</label></button>
+        </div>
+      <div class="page-dots"><i></i><i class="on"></i><i></i></div>
+      <div class="dock">
+        <button class="app dock-app" data-app="phone"><span class="icon phone"></span></button>
+        <button class="app dock-app" data-app="messages"><span class="icon messages"></span><i class="badge" id="messageBadge">2</i></button>
+        <button class="app dock-app" data-app="music"><span class="icon music"></span></button>
+        <button class="app dock-app" data-app="contacts"><span class="icon contacts"></span></button>
+      </div>
+      <div class="home-bar" data-action="home"></div>
+    </section>
+
+    <section class="screen app-screen" id="appScreen">
+      <header class="app-header">
+        <button id="backButton" class="back-button" aria-label="뒤로">‹</button>
+        <h1 id="appTitle">메시지</h1>
+        <button id="headerAction" class="header-action" aria-label="추가">＋</button>
+      </header>
+      <div class="app-content" id="appContent"></div>
+      <div class="home-bar dark" data-action="home"></div>
+    </section>
+
+    <section class="screen notification-screen" id="notificationScreen">
+      <div class="lock-wallpaper"></div>
+      <div class="lock-date" id="panelDate"></div>
+      <div class="lock-time" id="panelTime"></div>
+      <div id="notificationList"></div>
+      <button id="clearNotices" hidden></button>
+      <div class="lock-notice">☾ 방해 금지 모드</div>
+      <div class="lock-shortcuts">
+        <button data-action="flashlight" aria-label="손전등"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 2h8v4l-2 3v13h-4V9L8 6z" fill="#fff"/></svg></button>
+        <button data-action="camera" aria-label="카메라"><svg viewBox="0 0 24 24" width="24" height="24"><path d="M8 5h8l1.5 2H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2.5z" fill="#fff"/><circle cx="12" cy="13" r="3.6" fill="#3a4a66"/></svg></button>
+      </div>
+      <div class="home-bar"></div>
+    </section>
+
+    <section class="screen control-screen" id="controlScreen">
+      <div class="panel-handle"></div>
+      <div class="control-date"><span id="controlDate">일요일, 10월 18일</span><b id="controlTime">9:41</b></div>
+      <div class="toggles">
+        <button class="toggle on" data-toggle="airplane"><b>✈</b><span>에어플레인 모드</span></button>
+        <button class="toggle on" data-toggle="wifi"><b>⌁</b><span>Wi-Fi</span></button>
+        <button class="toggle" data-toggle="bluetooth"><b>ᛒ</b><span>Bluetooth</span></button>
+        <button class="toggle on" data-toggle="cellular"><b>▂▄▆</b><span>셀룰러 데이터</span></button>
+      </div>
+      <div class="slider-card"><label>☀ 밝기</label><input id="brightness" type="range" min="30" max="100" value="100"></div>
+      <div class="slider-card"><label>♫ 음량</label><input id="volume" type="range" min="0" max="100" value="65"></div>
+      <div class="control-tools"><button data-action="flashlight">◉<small>손전등</small></button><button data-action="camera">▣<small>카메라</small></button><button data-action="timer">◷<small>타이머</small></button><button data-action="screenrecord">●<small>화면 기록</small></button></div>
+      <div class="panel-hint">위로 쓸어올려 닫기</div>
+    </section>
+  <div class="edge top" id="edgeTop"></div><div class="edge bot" id="edgeBot"></div>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script src="data.js?v=21"></script>
+  <script src="autoreply.js?v=21"></script>
+  <script src="script.js?v=21"></script>
+  <script src="apps.js?v=21"></script>
+  <script src="kakao.js?v=21"></script>
+  <script src="naver.js?v=21"></script>
+  <script src="keyboard.js?v=21"></script>
+</body>
+</html>

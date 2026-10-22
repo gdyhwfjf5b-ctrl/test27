@@ -1,0 +1,33 @@
+/* 폰 화면 안에서 뜨는 가상 키보드 (keyboard.js) */
+.device{--kbh:262px}
+.vkb{position:absolute;left:0;right:0;bottom:0;height:var(--kbh);z-index:90;background:#d2d4da;border-radius:0 0 56px 56px;padding:10px 3px 0;transform:translateY(105%);transition:transform .3s cubic-bezier(.2,.9,.25,1);user-select:none;-webkit-user-select:none;touch-action:manipulation;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;visibility:hidden}
+.vkb.on{transform:none;visibility:visible}
+.vkb .r{display:flex;justify-content:center;gap:6px;margin-bottom:11px}
+.vkb .k{flex:1 1 0;max-width:36px;height:46px;border-radius:5px;background:#fff;box-shadow:0 1px 0 #898a8d;display:flex;align-items:center;justify-content:center;font-size:24px;color:#000;cursor:default}
+.vkb .k.f{background:#abb0ba;font-size:16px}
+.vkb .k.dn{background:#c4c7ce}.vkb .k.f.dn{background:#fff}
+.vkb .k.w{max-width:none;flex:1.35 1 0}
+.vkb .k.sp{max-width:none;flex:4.2 1 0;font-size:16px;background:#fff}
+.vkb .k.ret{max-width:none;flex:1.9 1 0;font-size:16px}
+.vkb .k.ret.act{background:#007aff;color:#fff}
+.vkb .k.sh.on{background:#fff}.vkb .k.sh.caps{background:#fff;color:#007aff}
+.vkb .k svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.vkb .k.sh.on svg,.vkb .k.sh.caps svg{fill:currentColor}
+.vkb .ins{flex:.5 1 0}
+.vkb .bot{position:absolute;left:0;right:0;bottom:0;height:34px;display:flex;align-items:center;justify-content:center}
+.vkb .bot i{width:134px;height:5px;border-radius:3px;background:#000}
+.vkb .pop{position:absolute;z-index:3;width:52px;height:56px;margin-left:-8px;margin-top:-58px;background:#fff;border-radius:10px;box-shadow:0 2px 8px #0004;display:flex;align-items:center;justify-content:center;font-size:32px;color:#000;pointer-events:none}
+.vkb.num .r.pad{gap:8px;margin-bottom:9px;padding:0 4px}
+.vkb.num .k.n{max-width:none;flex:1 1 0;height:50px;flex-direction:column;font-size:26px;line-height:1}
+.vkb.num .k.n small{font-size:9px;letter-spacing:2px;margin-top:1px}
+.vkb.num .k.n.f{background:#abb0ba}
+.device.kb-open #appContent{bottom:var(--kbh)}
+.app-content{transition:bottom .3s cubic-bezier(.2,.9,.25,1)}
+.device.kb-open .tb{bottom:10px}.device.kb-open .kk-in{bottom:8px}
+.vkb.dark{background:#2a2a2d}
+.vkb.dark .k{background:#6a6a6e;color:#fff;box-shadow:0 1px 0 #0008}.vkb.dark .k.f{background:#47474b}
+.vkb.dark .k.dn{background:#8b8b90}.vkb.dark .k.f.dn{background:#6a6a6e}
+.vkb.dark .k.sh.on,.vkb.dark .k.sh.caps{background:#fff;color:#000}
+.vkb.dark .bot i{background:#fff}.vkb.dark .pop{background:#6a6a6e;color:#fff}
+.vkb.num.dark .k.n.f{background:#47474b}
+.vkb .k.ins{background:none!important;box-shadow:none!important;max-width:none}
